@@ -147,18 +147,34 @@ if __name__ == "__main__":
     save_plot(vl1, "plots/experiment_1.png", "Baseline")
 
     # EXPERIMENT 2
+    # --- Copy and edit below this line ---
 
-    chr2a, val2a, vl2a = run_ga(mutation_rate=0.01)
-    print_solution(chr2a)
-    print("Final best value:", val2a)
-    save_plot(vl2a, "plots/experiment_2a.png", "Mutation 0.01")
+# mutation 0.01
+chr2a, val2a, vl2a = run_ga(
+    population_size=20, generations=50,
+    crossover_rate=0.8, mutation_rate=0.01,
+    tournament_size=3, seed=42
+)
+print_solution(chr2a)
+print(f"  Final best value: {val2a}")
+save_plot(vl2a, "plots/experiment_2a.png", "mutation_rate=0.01")
 
-    chr2b, val2b, vl2b = run_ga(mutation_rate=0.05)
-    print_solution(chr2b)
-    print("Final best value:", val2b)
-    save_plot(vl2b, "plots/experiment_2b.png", "Mutation 0.05")
+# mutation 0.05
+chr2b, val2b, vl2b = run_ga(
+    population_size=20, generations=50,
+    crossover_rate=0.8, mutation_rate=0.05,
+    tournament_size=3, seed=42
+)
+print_solution(chr2b)
+print(f"  Final best value: {val2b}")
+save_plot(vl2b, "plots/experiment_2b.png", "mutation_rate=0.05")
 
-    chr2c, val2c, vl2c = run_ga(mutation_rate=0.30)
-    print_solution(chr2c)
-    print("Final best value:", val2c)
-    save_plot(vl2c, "plots/experiment_2c.png", "Mutation 0.30")
+# mutation 0.30
+chr2c, val2c, vl2c = run_ga(
+    population_size=20, generations=50,
+    crossover_rate=0.8, mutation_rate=0.30,
+    tournament_size=3, seed=42
+)
+print_solution(chr2c)
+print(f"  Final best value: {val2c}")
+save_plot(vl2c, "plots/experiment_2c.png", "mutation_rate=0.30")
