@@ -105,9 +105,9 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 
 **Which mutation_rate gave the best result? Why do you think that is?**
-```
-[ The mutation rate of 0.30 gave the best result because it achieved the highest final value (78). The higher mutation introduced more diversity, which helped the algorithm discover a better solution in this case.]
-```
+
+The mutation rate of 0.30 gave the best result because it achieved the highest final value (78). The higher mutation introduced more diversity, which helped the algorithm discover a better solution in this case.
+
 
 ---
 
@@ -122,7 +122,7 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 **In your own words — what is the most important thing you learned about Genetic Algorithms from these experiments? (3–5 sentences)**
 
-[ From these experiments, I learned that mutation rate strongly affects the performance of Genetic Algorithms. A low mutation rate reduces diversity and may cause the algorithm to get stuck, while a high mutation rate increases exploration. In this experiment, a higher mutation rate produced the best result, but it also made the search less stable. Overall, I understood how GA gradually evolves better solutions across generations. 
+From these experiments, I learned that mutation rate strongly affects the performance of Genetic Algorithms. A low mutation rate reduces diversity and may cause the algorithm to get stuck, while a high mutation rate increases exploration. In this experiment, a higher mutation rate produced the best result, but it also made the search less stable. Overall, I understood how GA gradually evolves better solutions across generations. 
 
 
 ---
