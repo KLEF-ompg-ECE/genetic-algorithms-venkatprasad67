@@ -100,19 +100,19 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 | mutation_rate | Final best value | Weight (kg) | Valid? | Shape of curve |
 |--------------|-----------------|-------------|--------|----------------|
-| 0.01         |                 |             |        |                |
-| 0.05         |                 |             |        |                |
-| 0.30         |                 |             |        |                |
+| 0.01         |        75         |    14.9         |    Yes    |        Smooth, early flat        |
+| 0.05         |        77         |      14.4       |    Yes    |      Steady improvement          |
+| 0.30         |        78         |      14.1       |    Yes    |        Noisy/unstable        |
 
 **Compare the three plots. What happens when mutation is too low? Too high? (3–4 sentences)**  
 *Hint: Too low = no diversity, may get stuck. Too high = random search. What is the sweet spot?*
 ```
-[ YOUR OBSERVATION ]
+[ When the mutation rate is too low (0.01), the algorithm quickly converges but may get stuck in local optima due to low diversity. When the mutation rate is too high (0.30), the search becomes unstable and behaves more like random search, causing irregular improvement. A moderate mutation rate (0.05) gives steady and reliable progress. Overall, the plots show that balanced mutation helps maintain both exploration and stability. ]
 ```
 
 **Which mutation_rate gave the best result? Why do you think that is?**
 ```
-[ YOUR ANSWER ]
+[ The mutation rate of 0.30 gave the best result because it achieved the highest final value (78). The higher mutation introduced more diversity, which helped the algorithm discover a better solution in this case.]
 ```
 
 ---
@@ -123,12 +123,12 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 | Experiment | Key setting | Final value | Main finding in one sentence |
 |------------|-------------|-------------|------------------------------|
-| 1 — Baseline | mutation_rate = 0.05 | | |
-| 2 — Mutation rate | mutation_rate = ___ | | |
+| 1 — Baseline | mutation_rate = 0.05 |77 |GA improves quickly and then converges. |
+| 2 — Mutation rate | mutation_rate = ___ |78 |Higher mutation found slightly better solution. |
 
 **In your own words — what is the most important thing you learned about Genetic Algorithms from these experiments? (3–5 sentences)**
 ```
-[ YOUR REFLECTION ]
+[ From these experiments, I learned that mutation rate strongly affects the performance of Genetic Algorithms. A low mutation rate reduces diversity and may cause the algorithm to get stuck, while a high mutation rate increases exploration. In this experiment, a higher mutation rate produced the best result, but it also made the search less stable. Overall, I understood how GA gradually evolves better solutions across generations. ]
 ```
 
 ---
