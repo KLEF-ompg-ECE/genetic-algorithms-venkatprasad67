@@ -9,23 +9,25 @@
 
 ## Before You Begin — Read the Code
 
-### Q1. What does the `fitness()` function return? Why does an overweight solution score 0?
+**Q1. What does the `fitness()` function return? Why does an overweight solution score 0?**
 
-The `fitness()` function returns the total value of selected items if their total weight is within the limit. If the weight exceeds the maximum capacity, it returns 0. This prevents invalid solutions from being selected during evolution.
-
----
-
-### Q2. What does `tournament_select()` do? Why are higher-fitness individuals more likely to be chosen?
-
-`tournament_select()` randomly selects a small group of individuals and chooses the one with the highest fitness. Higher-fitness individuals are more likely to win tournaments. This helps good solutions survive and reproduce.
+The fitness() function returns the total value of selected items if their total weight is within the limit. If the weight exceeds the maximum capacity, it returns 0. This prevents invalid solutions from being selected during evolution.
 
 ---
 
-### Q3. What does this line do? Why is it important?
+**Q2. What does `tournament_select()` do? Why are higher-fitness individuals more likely to be chosen?**
+
+tournament_select() randomly selects a small group of individuals and chooses the one with highest fitness. Higher-fitness individuals are more likely to win tournaments. This helps good solutions survive and reproduce.
+
+---
+
+**Q3. Look at the `run_ga()` loop. Find this line:**
 
 ```python
 next_gen = [best_chromosome[:]]
 ```
+
+**What is this doing? Why is it important to always keep the best solution?**
 
 This line copies the best chromosome into the next generation unchanged. This is called elitism. It ensures the best solution is never lost during crossover or mutation.
 
@@ -41,7 +43,7 @@ This line copies the best chromosome into the next generation unchanged. This is
 | Total weight of best solution (kg) | 14.4 |
 | Is solution valid (Yes / No) | Yes |
 
-### Packing List
+**Copy the printed packing list here:**
 
 ```
 Best Packing List
@@ -63,7 +65,7 @@ Value  : 77
 Valid  : Yes
 ```
 
-### Observation
+**Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**
 
 The plot shows a rapid increase in fitness during the early generations. The biggest improvement occurs in the first few generations. After that, the curve gradually flattens, showing convergence.
 
@@ -77,26 +79,28 @@ The plot shows a rapid increase in fitness during the early generations. The big
 | 0.05 | 77 | 14.4 | Yes | Steady improvement |
 | 0.30 | 78 | 14.1 | Yes | Noisy/unstable |
 
-### Observation
+**Compare the three plots. What happens when mutation is too low? Too high? (3–4 sentences)**
 
-When the mutation rate is too low (0.01), the algorithm converges early and gets stuck due to low diversity. When the mutation rate is high (0.30), the search becomes unstable but finds a better solution. A moderate mutation rate (0.05) gives steady improvement.
+When the mutation rate is too low (0.01), the algorithm converges early and gets stuck due to low diversity. When the mutation rate is too high (0.30), the search becomes unstable but finds a better solution. A moderate mutation rate (0.05) gives steady improvement.
 
-### Best Mutation Rate
+---
 
-The mutation rate 0.30 gave the best result because it achieved the highest value and explored more solutions.
+**Which mutation_rate gave the best result? Why do you think that is?**
+
+The mutation rate of 0.30 gave the best result because it achieved the highest final value (78). The higher mutation introduced more diversity, which helped the algorithm discover a better solution in this case.
 
 ---
 
 ## Summary
 
-| Experiment | Key setting | Final value | Main finding |
-|------------|-------------|-------------|--------------|
-| 1 — Baseline | mutation_rate = 0.05 | 77 | GA converges quickly |
-| 2 — Mutation rate | mutation_rate = 0.30 | 78 | Higher mutation improved results |
+| Experiment | Key setting | Final value | Main finding in one sentence |
+|------------|-------------|-------------|------------------------------|
+| 1 — Baseline | mutation_rate = 0.05 | 77 | GA improves quickly and then converges. |
+| 2 — Mutation rate | mutation_rate = 0.30 | 78 | Higher mutation found slightly better solution. |
 
-### Reflection
+**In your own words — what is the most important thing you learned about Genetic Algorithms from these experiments? (3–5 sentences)**
 
-From these experiments, I learned that mutation rate strongly affects Genetic Algorithm performance. Low mutation reduces diversity and may cause premature convergence. High mutation improves exploration but reduces stability. Balanced tuning helps GA find better solutions.
+From these experiments, I learned that mutation rate strongly affects Genetic Algorithm performance. A low mutation rate reduces diversity and may cause premature convergence. A high mutation rate improves exploration but reduces stability. Balanced tuning helps GA find better solutions.
 
 
 ---
