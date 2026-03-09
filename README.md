@@ -1,9 +1,9 @@
 # Assignment 2 — Genetic Algorithm: Knapsack Problem
 ## Observation Report
 
-**Student Name  :** ________________K. Venkat Prasad___________  
-**Student ID    :** ________________2310040076___________  
-**Date Submitted:** ______________09/03/2026_____________  
+**Student Name  :** K. Venkat Prasad 
+**Student ID    :** 2310040076
+**Date Submitted:** 09/03/2026
 
 ---
 
