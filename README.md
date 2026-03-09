@@ -57,7 +57,7 @@ python ga_knapsack.py
 
 **Copy the printed packing list here:**
 
- Best Packing List
+Best Packing List
 --------------------------------------
 + Water bottle
 + First aid kit
@@ -73,7 +73,7 @@ python ga_knapsack.py
 --------------------------------------
 Weight : 14.4 / 15.0 kg
 Value  : 77
-Valid  : Yes 
+Valid  : Yes
 
 
 **Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**  
