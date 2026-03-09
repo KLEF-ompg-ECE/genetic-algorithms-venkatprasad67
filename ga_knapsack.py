@@ -1,7 +1,3 @@
-"""
-ga_knapsack.py  —  Genetic Algorithm: 0/1 Knapsack Problem
-"""
-
 import random
 import matplotlib.pyplot as plt
 import os
@@ -35,7 +31,6 @@ WEIGHTS = [i[1] for i in ITEMS]
 VALUES = [i[2] for i in ITEMS]
 NAMES = [i[0] for i in ITEMS]
 
-
 # =============================================================================
 # FITNESS
 # =============================================================================
@@ -47,7 +42,6 @@ def fitness(chromosome):
         return 0
     return total_value
 
-
 # =============================================================================
 # GA OPERATORS
 # =============================================================================
@@ -57,13 +51,11 @@ def tournament_select(population, fitnesses, k=3):
     winner = max(candidates, key=lambda i: fitnesses[i])
     return population[winner][:]
 
-
 def crossover(p1, p2, rate=0.8):
     if random.random() > rate:
         return p1[:]
     cut = random.randint(1, NUM_ITEMS - 1)
     return p1[:cut] + p2[cut:]
-
 
 def mutate(chromosome, rate):
     result = chromosome[:]
@@ -71,7 +63,6 @@ def mutate(chromosome, rate):
         if random.random() < rate:
             result[i] = 1 - result[i]
     return result
-
 
 # =============================================================================
 # GENETIC ALGORITHM
@@ -101,7 +92,6 @@ def run_ga(population_size=20, generations=50,
 
         value_log.append(best_value)
 
-        # ELITISM
         next_gen = [best_chromosome[:]]
 
         while len(next_gen) < population_size:
@@ -114,7 +104,6 @@ def run_ga(population_size=20, generations=50,
         population = next_gen
 
     return best_chromosome, best_value, value_log
-
 
 # =============================================================================
 # OUTPUT
@@ -135,7 +124,6 @@ def print_solution(chromosome):
     print("Value  :", total_value)
     print("Valid  :", "Yes" if total_weight <= MAX_WEIGHT else "No")
 
-
 def save_plot(value_log, filename, title):
     os.makedirs("plots", exist_ok=True)
     plt.plot(value_log)
@@ -145,41 +133,31 @@ def save_plot(value_log, filename, title):
     plt.grid()
     plt.savefig(filename)
     plt.close()
-    print("Saved ->", filename)
-
 
 # =============================================================================
-# RUN EXPERIMENTS
+# RUN
 # =============================================================================
 
 if __name__ == "__main__":
 
-    print("\n==============================")
-    print("EXPERIMENT 1 — Baseline")
-    print("==============================")
-
+    # EXPERIMENT 1
     chr1, val1, vl1 = run_ga(mutation_rate=0.05)
     print_solution(chr1)
     print("Final best value:", val1)
-    save_plot(vl1, "plots/experiment_1.png", "Baseline (0.05)")
+    save_plot(vl1, "plots/experiment_1.png", "Baseline")
 
-    print("\n==============================")
-    print("EXPERIMENT 2 — Mutation Rate")
-    print("==============================")
+    # EXPERIMENT 2
 
-    # -------- mutation 0.01 --------
     chr2a, val2a, vl2a = run_ga(mutation_rate=0.01)
     print_solution(chr2a)
     print("Final best value:", val2a)
     save_plot(vl2a, "plots/experiment_2a.png", "Mutation 0.01")
 
-    # -------- mutation 0.05 --------
     chr2b, val2b, vl2b = run_ga(mutation_rate=0.05)
     print_solution(chr2b)
     print("Final best value:", val2b)
     save_plot(vl2b, "plots/experiment_2b.png", "Mutation 0.05")
 
-    # -------- mutation 0.30 --------
     chr2c, val2c, vl2c = run_ga(mutation_rate=0.30)
     print_solution(chr2c)
     print("Final best value:", val2c)
