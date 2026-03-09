@@ -1,9 +1,9 @@
 # Assignment 2 — Genetic Algorithm: Knapsack Problem
 ## Observation Report
 
-**Student Name  :** ___________________________  
-**Student ID    :** ___________________________  
-**Date Submitted:** ___________________________  
+**Student Name  :** ________________K. Venkat Prasad___________  
+**Student ID    :** ________________2310040076___________  
+**Date Submitted:** ______________09/03/2026_____________  
 
 ---
 
@@ -135,9 +135,9 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 ## Submission Checklist
 
-- [ ] Student name and ID filled in
-- [ ] Q1, Q2, Q3 answered
-- [ ] Experiment 1: table filled, packing list pasted, plot observation written
-- [ ] Experiment 2: results table filled (3 rows), observation and answer written
-- [ ] Summary table completed and reflection written
-- [ ] `plots/` contains: `experiment_1.png`, `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`
+- [✔ ] Student name and ID filled in
+- [ ✔] Q1, Q2, Q3 answered
+- [✔ ] Experiment 1: table filled, packing list pasted, plot observation written
+- [✔ ] Experiment 2: results table filled (3 rows), observation and answer written
+- [✔ ] Summary table completed and reflection written
+- [✔ ] `plots/` contains: `experiment_1.png`, `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`
