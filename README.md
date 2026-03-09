@@ -1,38 +1,31 @@
 # Assignment 2 — Genetic Algorithm: Knapsack Problem
 ## Observation Report
 
-**Student Name  :** K. Venkat Prasad 
-**Student ID    :** 2310040076
-**Date Submitted:** 09/03/2026
-
----
-
-## How to Submit
-
-1. Run each experiment following the instructions below
-2. Fill in every answer box — do not leave placeholders
-3. Make sure the `plots/` folder contains all required images
-4. Commit this README and the `plots/` folder to your GitHub repo
+**Student Name  :** K. Venkat Prasad  
+**Student ID    :** 2310040076  
+**Date Submitted:** 09/03/2026  
 
 ---
 
 ## Before You Begin — Read the Code
 
-Open `ga_knapsack.py` and read through it. Then answer these questions.
+### Q1. What does the `fitness()` function return? Why does an overweight solution score 0?
 
-**Q1. What does the `fitness()` function return? Why does an overweight solution score 0?**
+The `fitness()` function returns the total value of selected items if their total weight is within the limit. If the weight exceeds the maximum capacity, it returns 0. This prevents invalid solutions from being selected during evolution.
 
-The fitness() function returns the total value of selected items if their total weight is within the limit. If the weight exceeds the maximum capacity, it returns 0.This prevents invalid solutions from being selected during evolution.
+---
 
-**Q2. What does `tournament_select()` do? Why are higher-fitness individuals more likely to be chosen?**
+### Q2. What does `tournament_select()` do? Why are higher-fitness individuals more likely to be chosen?
 
-tournament_select() randomly selects a small group of individuals and chooses the one with highest fitness. Higher-fitness individuals are more likely to win tournaments. This helps good solutions survive and reproduce.
+`tournament_select()` randomly selects a small group of individuals and chooses the one with the highest fitness. Higher-fitness individuals are more likely to win tournaments. This helps good solutions survive and reproduce.
 
-**Q3. Look at the `run_ga()` loop. Find this line:**
+---
+
+### Q3. What does this line do? Why is it important?
+
 ```python
 next_gen = [best_chromosome[:]]
 ```
-**What is this doing? Why is it important to always keep the best solution?**
 
 This line copies the best chromosome into the next generation unchanged. This is called elitism. It ensures the best solution is never lost during crossover or mutation.
 
@@ -40,22 +33,15 @@ This line copies the best chromosome into the next generation unchanged. This is
 
 ## Experiment 1 — Baseline Run
 
-**Instructions:** Run the program without changing anything.
-```bash
-python ga_knapsack.py
-```
-
-**Fill in this table:**
-
 | Metric | Your result |
 |--------|-------------|
-| Number of generations | 50|
-| Best value at generation 1 |60 |
-| Final best value |77 |
-| Total weight of best solution (kg) | 14.4kg|
-| Is solution valid (Yes / No) | Yes|
+| Number of generations | 50 |
+| Best value at generation 1 | 60 |
+| Final best value | 77 |
+| Total weight of best solution (kg) | 14.4 |
+| Is solution valid (Yes / No) | Yes |
 
-**Copy the printed packing list here:**
+### Packing List
 
 ```
 Best Packing List
@@ -77,53 +63,40 @@ Value  : 77
 Valid  : Yes
 ```
 
-**Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**  
-*Where does the biggest improvement happen? Does the curve flatten at some point?*
+### Observation
 
-The plot shows a rapid increase in fitness during the early generations, indicating quick improvement in solutions. The biggest improvement occurs in the first few generations as the algorithm identifies strong combinations. After that, the curve gradually flattens, showing convergence as fewer improvements are found.
-
+The plot shows a rapid increase in fitness during the early generations. The biggest improvement occurs in the first few generations. After that, the curve gradually flattens, showing convergence.
 
 ---
 
 ## Experiment 2 — Effect of Mutation Rate
 
-**Instructions:** In `ga_knapsack.py`, find the `# EXPERIMENT 2` block in `__main__`.  
-Copy it three times and run with `mutation_rate` = **0.01**, **0.05**, and **0.30**.  
-Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
-
-**Results table:**
-
 | mutation_rate | Final best value | Weight (kg) | Valid? | Shape of curve |
-|--------------|-----------------|-------------|--------|----------------|
-| 0.01         |        75         |    14.9         |    Yes    |        Smooth, early flat        |
-| 0.05         |        77         |      14.4       |    Yes    |      Steady improvement          |
-| 0.30         |        78         |      14.1       |    Yes    |        Noisy/unstable        |
+|--------------|------------------|-------------|--------|----------------|
+| 0.01 | 75 | 14.9 | Yes | Smooth, early flat |
+| 0.05 | 77 | 14.4 | Yes | Steady improvement |
+| 0.30 | 78 | 14.1 | Yes | Noisy/unstable |
 
-**Compare the three plots. What happens when mutation is too low? Too high? (3–4 sentences)**  
-*Hint: Too low = no diversity, may get stuck. Too high = random search. What is the sweet spot?*
+### Observation
 
- When the mutation rate is too low (0.01), the algorithm quickly converges but may get stuck in local optima due to low diversity. When the mutation rate is too high (0.30), the search becomes unstable and behaves more like random search, causing irregular improvement. A moderate mutation rate (0.05) gives steady and reliable progress. Overall, the plots show that balanced mutation helps maintain both exploration and stability. 
+When the mutation rate is too low (0.01), the algorithm converges early and gets stuck due to low diversity. When the mutation rate is high (0.30), the search becomes unstable but finds a better solution. A moderate mutation rate (0.05) gives steady improvement.
 
+### Best Mutation Rate
 
-**Which mutation_rate gave the best result? Why do you think that is?**
-
-The mutation rate of 0.30 gave the best result because it achieved the highest final value (78). The higher mutation introduced more diversity, which helped the algorithm discover a better solution in this case.
-
+The mutation rate 0.30 gave the best result because it achieved the highest value and explored more solutions.
 
 ---
 
 ## Summary
 
-**Complete this table with your best result from each experiment:**
+| Experiment | Key setting | Final value | Main finding |
+|------------|-------------|-------------|--------------|
+| 1 — Baseline | mutation_rate = 0.05 | 77 | GA converges quickly |
+| 2 — Mutation rate | mutation_rate = 0.30 | 78 | Higher mutation improved results |
 
-| Experiment | Key setting | Final value | Main finding in one sentence |
-|------------|-------------|-------------|------------------------------|
-| 1 — Baseline | mutation_rate = 0.05 |77 |GA improves quickly and then converges. |
-| 2 — Mutation rate | mutation_rate = 0.30 |78 |Higher mutation found slightly better solution. |
+### Reflection
 
-**In your own words — what is the most important thing you learned about Genetic Algorithms from these experiments? (3–5 sentences)**
-
-From these experiments, I learned that mutation rate strongly affects the performance of Genetic Algorithms. A low mutation rate reduces diversity and may cause the algorithm to get stuck, while a high mutation rate increases exploration. In this experiment, a higher mutation rate produced the best result, but it also made the search less stable. Overall, I understood how GA gradually evolves better solutions across generations. 
+From these experiments, I learned that mutation rate strongly affects Genetic Algorithm performance. Low mutation reduces diversity and may cause premature convergence. High mutation improves exploration but reduces stability. Balanced tuning helps GA find better solutions.
 
 
 ---
