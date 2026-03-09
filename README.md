@@ -57,7 +57,7 @@ python ga_knapsack.py
 
 **Copy the printed packing list here:**
 ```
-[ Best Packing List
+ Best Packing List
 --------------------------------------
 + Water bottle
 + First aid kit
@@ -73,7 +73,7 @@ python ga_knapsack.py
 --------------------------------------
 Weight : 14.4 / 15.0 kg
 Value  : 77
-Valid  : Yes ]
+Valid  : Yes 
 ```
 
 **Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**  
@@ -118,7 +118,7 @@ The mutation rate of 0.30 gave the best result because it achieved the highest f
 | Experiment | Key setting | Final value | Main finding in one sentence |
 |------------|-------------|-------------|------------------------------|
 | 1 — Baseline | mutation_rate = 0.05 |77 |GA improves quickly and then converges. |
-| 2 — Mutation rate | mutation_rate = ___ |78 |Higher mutation found slightly better solution. |
+| 2 — Mutation rate | mutation_rate = 0.30 |78 |Higher mutation found slightly better solution. |
 
 **In your own words — what is the most important thing you learned about Genetic Algorithms from these experiments? (3–5 sentences)**
 
