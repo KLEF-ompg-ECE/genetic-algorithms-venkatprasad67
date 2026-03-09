@@ -23,7 +23,7 @@ Open `ga_knapsack.py` and read through it. Then answer these questions.
 **Q1. What does the `fitness()` function return? Why does an overweight solution score 0?**
 
 ```
-[ The fitness() function return the total value of the selected items if their total weight is within the knapsack capacity. ]
+ The fitness() function return the total value of the selected items if their total weight is within the knapsack capacity. 
 ```
 
 **Q2. What does `tournament_select()` do? Why are higher-fitness individuals more likely to be chosen?**
