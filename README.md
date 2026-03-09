@@ -23,13 +23,13 @@ Open `ga_knapsack.py` and read through it. Then answer these questions.
 **Q1. What does the `fitness()` function return? Why does an overweight solution score 0?**
 
 ```
-[ YOUR ANSWER — 2 to 3 sentences ]
+[ The fitness() function return the total value of the selected items if their total weight is within the knapsack capacity. ]
 ```
 
 **Q2. What does `tournament_select()` do? Why are higher-fitness individuals more likely to be chosen?**
 
 ```
-[ YOUR ANSWER — 2 to 3 sentences ]
+[ tournament_select() randomly selects a small group of individuals from the population and chooses the one with the highest fitness among them. ]
 ```
 
 **Q3. Look at the `run_ga()` loop. Find this line:**
@@ -39,7 +39,7 @@ next_gen = [best_chromosome[:]]
 **What is this doing? Why is it important to always keep the best solution?**
 
 ```
-[ YOUR ANSWER — 2 to 3 sentences ]
+[ This line copies the best chromosome from the current generation into the next generation without any changes (elitism). ]
 ```
 
 ---
