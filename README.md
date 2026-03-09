@@ -67,7 +67,7 @@ Valid  : Yes
 
 **Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**
 
-The plot shows a rapid increase in fitness during the early generations. The biggest improvement occurs in the first few generations. After that, the curve gradually flattens, showing convergence.
+The plot shows a steady increase in fitness across generations, especially in the early stages. The biggest improvement happens in the first few generations as the algorithm quickly finds good solutions. After that, the curve flattens, showing convergence with fewer improvements.
 
 ---
 
@@ -81,13 +81,13 @@ The plot shows a rapid increase in fitness during the early generations. The big
 
 **Compare the three plots. What happens when mutation is too low? Too high? (3–4 sentences)**
 
-When the mutation rate is too low (0.01), the algorithm converges early and gets stuck due to low diversity. When the mutation rate is too high (0.30), the search becomes unstable but finds a better solution. A moderate mutation rate (0.05) gives steady improvement.
+When the mutation rate is too low (0.01), the algorithm quickly converges but may get stuck in local optima due to low diversity. When the mutation rate is too high (0.30), the search becomes unstable and behaves more like random search. A moderate mutation rate (0.05) provides a balance between exploration and exploitation.
 
 ---
 
 **Which mutation_rate gave the best result? Why do you think that is?**
 
-The mutation rate of 0.30 gave the best result because it achieved the highest final value (78). The higher mutation introduced more diversity, which helped the algorithm discover a better solution in this case.
+The mutation rate of 0.30 gave the best result because it achieved the highest final value. The higher mutation introduced more diversity and allowed the algorithm to discover a better solution.
 
 ---
 
@@ -100,7 +100,7 @@ The mutation rate of 0.30 gave the best result because it achieved the highest f
 
 **In your own words — what is the most important thing you learned about Genetic Algorithms from these experiments? (3–5 sentences)**
 
-From these experiments, I learned that mutation rate strongly affects Genetic Algorithm performance. A low mutation rate reduces diversity and may cause premature convergence. A high mutation rate improves exploration but reduces stability. Balanced tuning helps GA find better solutions.
+From these experiments, I learned that mutation rate strongly affects Genetic Algorithm performance. A low mutation rate reduces diversity and may cause premature convergence, while a high mutation rate increases exploration but reduces stability. A balanced mutation rate helps the algorithm find better solutions over generations.
 
 
 ---
