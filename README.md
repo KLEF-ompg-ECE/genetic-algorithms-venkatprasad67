@@ -57,6 +57,7 @@ python ga_knapsack.py
 
 **Copy the printed packing list here:**
 
+```
 Best Packing List
 --------------------------------------
 + Water bottle
@@ -74,7 +75,7 @@ Best Packing List
 Weight : 14.4 / 15.0 kg
 Value  : 77
 Valid  : Yes
-
+```
 
 **Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**  
 *Where does the biggest improvement happen? Does the curve flatten at some point?*
